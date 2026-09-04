@@ -23,7 +23,7 @@
             'nav.lang':        'idioma:',
             'about.p1':        '> Soy <strong>Angel Abdiel Luna Razo</strong>, estudiante de <strong>Ingeniería en Software</strong> en la <strong>UES — Universidad Estatal de Sonora</strong>, México.',
             'about.p2':        '> Me gusta crear cosas que implican <span class="hl">tecnología y diseño</span>. Mi proyecto principal —y el más personal— es un <span class="hl">videojuego de supervivencia</span> en el que trabajo de forma individual, aplicando lo que voy aprendiendo sobre game design, arquitectura de software y narrativa.',
-            'about.p3':        '> Próximamente realizaré <span class="hl">prácticas profesionales</span>, busco un lugar donde seguir creciendo como desarrollador y aportar en proyectos reales.',
+            
 
             'projects.english.desc':    'App móvil tipo Duolingo para aprender inglés. Diccionario offline con verbos irregulares, regulares, sustantivos y más; mini-juegos (Word Match, Sopa de Letras, Listening); sistema de rachas, XP/niveles, corazones y monedas; mapa de niveles estilo Super Mario Bros y base de datos personal del usuario.',
             'projects.datapulse.desc':  'Aplicación web inteligente de <span class="hl">limpieza de datos y detección de anomalías</span>. Procesa CSV/Excel, genera perfiles por columna, marca información sensible, produce payloads sanitizados listos para IA y ofrece un chat con IA (DeepSeek) que propone acciones de limpieza con un flujo <em>plan → approve → apply</em>.',
@@ -68,7 +68,7 @@
             'nav.lang':        'lang:',
             'about.p1':        '> I am <strong>Angel Abdiel Luna Razo</strong>, a <strong>Software Engineering</strong> student at <strong>UES — Universidad Estatal de Sonora</strong>, Mexico.',
             'about.p2':        '> I love building things at the intersection of <span class="hl">technology and design</span>. My main —and most personal— project is a <span class="hl">survival video game</span> I work on solo, applying what I learn about game design, software architecture and storytelling.',
-            'about.p3':        '> I will be starting <span class="hl">professional internships</span> soon. I am looking for a place to keep growing as a developer and contribute to real-world projects.',
+            
 
             'projects.english.desc':    'A Duolingo-inspired mobile app to learn English. Offline dictionary with irregular/regular verbs, nouns and more; mini-games (Word Match, Word Search, Listening); streaks, XP/levels, hearts and coins; a Super Mario Bros-style world map and a personal word database.',
             'projects.datapulse.desc':  'Intelligent web app for <span class="hl">data cleaning and anomaly detection</span>. Processes CSV/Excel, generates per-column profiles, flags sensitive data, produces sanitized AI-ready payloads, and offers an AI chat (DeepSeek) that proposes cleanup actions through a <em>plan → approve → apply</em> flow.',
