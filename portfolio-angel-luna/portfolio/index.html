@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angel Abdiel Luna Razo — Portafolio</title>
+    <meta name="description" content="Portafolio de Angel Abdiel Luna Razo — Estudiante de Ingeniería en Software en la UES. Proyectos, skills y experiencia." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Cursor de cursor global -->
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- NAV -->
+    <header class="nav">
+        <div class="nav-logo">~/angel<span class="cursor-blink">_</span></div>
+        <nav class="nav-links">
+            <a href="#home" data-cmd="home">./home</a>
+            <a href="#about" data-cmd="about">./about</a>
+            <a href="#projects" data-cmd="projects">./projects</a>
+            <a href="#skills" data-cmd="skills">./skills</a>
+            <a href="#contact" data-cmd="contact">./contact</a>
+        </nav>
+
+        <!-- Switch de idioma -->
+        <div class="lang-switch" role="group" aria-label="Language">
+            <span class="lang-label" data-i18n="nav.lang">lang:</span>
+            <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+            <span class="lang-sep">|</span>
+            <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">[menu]</button>
+    </header>
+
+    <main>
+
+        <!-- HERO / TERMINAL -->
+        <section id="home" class="hero">
+            <div class="terminal">
+                <div class="terminal-bar">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">angel@portfolio:~</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="line"><span class="prompt">guest@portfolio</span>:<span class="path">~</span>$ <span class="cmd">whoami</span></div>
+                    <div class="line output" data-i18n="hero.whoami"></div>
+
+                    <div class="line"><span class="prompt">guest@portfolio</span>:<span class="path">~</span>$ <span class="cmd">cat</span> name.txt</div>
+                    <div class="line output big-name" data-i18n="hero.name"></div>
+
+                    <div class="line"><span class="prompt">guest@portfolio</span>:<span class="path">~</span>$ <span class="cmd">echo</span> <span class="string" data-i18n="hero.echo"></span></div>
+                    <div class="line output sub" data-i18n="hero.welcome"></div>
+
+                    <div class="line"><span class="prompt">guest@portfolio</span>:<span class="path">~</span>$ <span class="cmd">ls</span> <span class="flag">./sections</span></div>
+                    <div class="line output" data-i18n="hero.sections"></div>
+
+                    <div class="line"><span class="prompt">guest@portfolio</span>:<span class="path">~</span>$ <span class="cursor-blink">█</span></div>
+                </div>
+            </div>
+
+            <div class="scroll-hint">
+                <span data-i18n="hero.scroll">scroll</span>
+                <div class="arrow">↓</div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <h2 class="section-title">$ <span class="cmd" data-i18n="nav.about">cat</span> <span data-i18n="about.title">about.txt</span></h2>
+            <div class="card">
+                <p data-i18n="about.p1"></p>
+                <p data-i18n="about.p2"></p>
+                <p data-i18n="about.p3"></p>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+            <h2 class="section-title">$ <span class="cmd">ls</span> <span class="flag">-la</span> ./projects</h2>
+
+            <div class="projects-grid">
+
+                <!-- English Vault -->
+                <article class="project-card">
+                    <div class="project-head">
+                        <h3>01. English Vault</h3>
+                    </div>
+                    <p class="project-desc" data-i18n="projects.english.desc"></p>
+                    <ul class="project-tech">
+                        <li>Kotlin</li>
+                        <li>Jetpack Compose</li>
+                        <li>Room</li>
+                        <li>Hilt</li>
+                        <li>Coroutines</li>
+                        <li>Android Studio</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/lunarazoangel-developer/English-Vault" target="_blank" rel="noopener" class="btn" data-i18n="projects.btn.code">
+                            &gt; ver código
+                        </a>
+                    </div>
+                </article>
+
+                <!-- DataPulse -->
+                <article class="project-card">
+                    <div class="project-head">
+                        <h3>02. DataPulse</h3>
+                    </div>
+                    <p class="project-desc" data-i18n="projects.datapulse.desc"></p>
+                    <ul class="project-tech">
+                        <li>Next.js</li>
+                        <li>React</li>
+                        <li>Tailwind CSS</li>
+                        <li>FastAPI</li>
+                        <li>Python</li>
+                        <li>Polars</li>
+                        <li>DeepSeek API</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/lunarazoangel-developer/DataPulse" target="_blank" rel="noopener" class="btn" data-i18n="projects.btn.code">
+                            &gt; ver código
+                        </a>
+                    </div>
+                </article>
+
+                <!-- El juego (no público) -->
+                <article class="project-card project-card--locked">
+                    <div class="project-head">
+                        <h3>03. Survival Roguelike <span class="badge" data-i18n="projects.game.badge">ALPHA · NO PÚBLICO</span></h3>
+                    </div>
+                    <div class="project-preview">
+                        <div class="preview-grid">
+                            <div></div><div></div><div></div><div></div>
+                            <div></div><div></div><div></div><div></div>
+                            <div></div><div></div><div></div><div></div>
+                            <div></div><div></div><div></div><div></div>
+                            <div></div><div></div><div></div><div></div>
+                            <div></div><div></div><div></div><div></div>
+                        </div>
+                        <div class="preview-overlay">
+                            <span class="overlay-tag" data-i18n="projects.game.preview"></span>
+                        </div>
+                    </div>
+                    <p class="project-desc" data-i18n="projects.game.desc"></p>
+                    <ul class="project-tech">
+                        <li>Godot 4.6</li>
+                        <li>GDScript</li>
+                        <li>Pixel Art</li>
+                        <li>Top-down</li>
+                        <li>Multiplayer (planeado)</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/file/d/1qN-aj8Ot7ntdWz4kIPA4xn_hM0QBmQHl/view?usp=sharing" target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="projects.btn.preview">
+                            &gt; ver preview (Drive)
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section">
+            <h2 class="section-title">$ <span class="cmd">cat</span> ./skills.json</h2>
+
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3 data-i18n="skills.langs">lenguajes</h3>
+                    <ul>
+                        <li><span class="dot-live"></span> Kotlin</li>
+                        <li><span class="dot-live"></span> Python</li>
+                        <li><span class="dot-live"></span> GDScript</li>
+                        <li><span class="dot-live"></span> JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3 data-i18n="skills.tools">herramientas</h3>
+                    <ul>
+                        <li><span class="dot-live"></span> Git &amp; GitHub</li>
+                        <li><span class="dot-live"></span> Android Studio</li>
+                        <li><span class="dot-live"></span> Godot 4.6</li>
+                        <li><span class="dot-live"></span> Power BI <a href="#cert-powerbi" class="cert-link" data-i18n="skills.cert"></a></li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3 data-i18n="skills.exploring">explorando</h3>
+                    <ul>
+                        <li><span class="dot-warn"></span> <span data-i18n="skills.ai"></span> <span class="muted">(openCode)</span></li>
+                        <li><span class="dot-warn"></span> <span data-i18n="skills.llm"></span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="status-line">
+                <span class="prompt-symbol">&gt;</span> <span data-i18n="skills.status.label">Estado:</span> <span class="ok" data-i18n="skills.status.value">abierto a prácticas profesionales</span>
+            </p>
+
+            <!-- Certificado Power BI -->
+            <div id="cert-powerbi" class="cert-card">
+                <div class="cert-head">
+                    <span class="cert-label" data-i18n="cert.label">// certificado</span>
+                    <h3>Data Analyst in Power BI</h3>
+                    <span class="cert-id">#770,817</span>
+                </div>
+                <div class="cert-body">
+                    <a href="assets/cert-datacamp-powerbi.jpg" target="_blank" rel="noopener" class="cert-img-link">
+                        <img src="assets/cert-datacamp-powerbi.jpg"
+                             alt="DataCamp Statement of Accomplishment — Data Analyst in Power BI, awarded to Angel Luna Razo"
+                             class="cert-img" />
+                    </a>
+                    <p class="cert-meta">
+                        <span><span class="cert-key-inline" data-i18n="cert.issuer">Emisor:</span> DataCamp</span>
+                        <span><span class="cert-key-inline" data-i18n="cert.length">Duración:</span> 50 hr</span>
+                        <span><span class="cert-key-inline" data-i18n="cert.date">Fecha:</span> Dec 31, 2025</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <h2 class="section-title">$ <span class="cmd">./contact</span> <span class="flag">--send</span></h2>
+
+            <div class="card contact-card">
+                <p data-i18n="contact.intro"></p>
+
+                <div class="contact-grid">
+                    <a href="mailto:lunarazoangel@gmail.com" class="contact-item">
+                        <span class="contact-key">email</span>
+                        <span class="contact-val">lunarazoangel@gmail.com</span>
+                    </a>
+                    <a href="tel:+526861234567" class="contact-item">
+                        <span class="contact-key">phone</span>
+                        <span class="contact-val">+52 686 124 4240 </span>
+                    </a>
+                    <a href="https://github.com/lunarazoangel-developer" target="_blank" rel="noopener" class="contact-item">
+                        <span class="contact-key">github</span>
+                        <span class="contact-val">@lunarazoangel-developer</span>
+                    </a>
+                    <a href="#" class="contact-item contact-item--disabled" title="Pendiente">
+                        <span class="contact-key">linkedin</span>
+                        <span class="contact-val">/in/angel-luna <span class="muted" data-i18n="contact.soon">(próximamente)</span></span>
+                    </a>
+                    <div class="contact-item">
+                        <span class="contact-key" data-i18n="contact.location">ubicación</span>
+                        <span class="contact-val">Mexicali, B.C. — México</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer">
+                <span class="prompt-symbol">&gt;</span> © 2026 Angel Abdiel Luna Razo · <span class="ok" data-i18n="footer.built">built with HTML, CSS &amp; JS</span> · <span class="muted">~/portfolio</span>
+            </p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
