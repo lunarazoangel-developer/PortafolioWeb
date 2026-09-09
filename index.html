@@ -12,18 +12,22 @@
 </head>
 <body>
 
-    <!-- Cursor de cursor global -->
+    <a class="skip-link" href="#content">Saltar al contenido</a>
+    <canvas class="starfield" id="starfield" aria-hidden="true"></canvas>
+    <div class="cosmic-glow" aria-hidden="true"></div>
+
+    <!-- Cursor global -->
     <div class="cursor-dot" id="cursorDot"></div>
 
     <!-- NAV -->
     <header class="nav">
-        <div class="nav-logo">~/angel<span class="cursor-blink">_</span></div>
-        <nav class="nav-links">
-            <a href="#home" data-cmd="home">./home</a>
-            <a href="#about" data-cmd="about">./about</a>
-            <a href="#projects" data-cmd="projects">./projects</a>
-            <a href="#skills" data-cmd="skills">./skills</a>
-            <a href="#contact" data-cmd="contact">./contact</a>
+        <a class="nav-logo" href="#home" aria-label="Ir al inicio">~/angel<span class="cursor-blink">_</span></a>
+        <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+            <a href="#home">./home</a>
+            <a href="#about">./about</a>
+            <a href="#projects">./projects</a>
+            <a href="#skills">./skills</a>
+            <a href="#contact">./contact</a>
         </nav>
 
         <!-- Switch de idioma -->
@@ -34,32 +38,35 @@
             <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
 
-        <button class="nav-toggle" id="navToggle" aria-label="Menu">[menu]</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">[menu]</button>
     </header>
 
-    <main>
+    <main id="content">
 
         <!-- HERO / TERMINAL -->
         <section id="home" class="hero">
-            <div class="terminal">
+            <div class="terminal" aria-label="Presentación de Angel Luna en una terminal">
                 <div class="terminal-bar">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="terminal-title">angel@portfolio:~</span>
+                    <div class="terminal-controls" aria-hidden="true">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">angel@portfolio: ~</span>
+                    <span class="terminal-state" aria-hidden="true">● online</span>
                 </div>
                 <div class="terminal-body">
                     <div class="line"><span class="prompt">guest@portfolio</span>:<span class="path">~</span>$ <span class="cmd">whoami</span></div>
-                    <div class="line output" data-i18n="hero.whoami"></div>
+                    <div class="line output" id="whoami" data-i18n="hero.whoami"></div>
 
                     <div class="line"><span class="prompt">guest@portfolio</span>:<span class="path">~</span>$ <span class="cmd">cat</span> name.txt</div>
-                    <div class="line output big-name" data-i18n="hero.name"></div>
+                    <h1 class="line output big-name" id="bigName" data-i18n="hero.name"></h1>
 
                     <div class="line"><span class="prompt">guest@portfolio</span>:<span class="path">~</span>$ <span class="cmd">echo</span> <span class="string" data-i18n="hero.echo"></span></div>
-                    <div class="line output sub" data-i18n="hero.welcome"></div>
+                    <div class="line output sub" id="welcome" data-i18n="hero.welcome"></div>
 
                     <div class="line"><span class="prompt">guest@portfolio</span>:<span class="path">~</span>$ <span class="cmd">ls</span> <span class="flag">./sections</span></div>
-                    <div class="line output" data-i18n="hero.sections"></div>
+                    <div class="line output terminal-list" id="sections" data-i18n="hero.sections"></div>
 
                     <div class="line"><span class="prompt">guest@portfolio</span>:<span class="path">~</span>$ <span class="cursor-blink">█</span></div>
                 </div>
@@ -186,7 +193,7 @@
                         <li><span class="dot-live"></span> Git &amp; GitHub</li>
                         <li><span class="dot-live"></span> Android Studio</li>
                         <li><span class="dot-live"></span> Godot 4.6</li>
-                        <li><span class="dot-live"></span> Power BI <a href="#cert-powerbi" class="cert-link" data-i18n="skills.cert"></a></li>
+                        <li><span class="dot-live"></span> Power BI</li>
                     </ul>
                 </div>
                 <div class="skill-group">
@@ -197,10 +204,6 @@
                     </ul>
                 </div>
             </div>
-
-            <p class="status-line">
-                <span class="prompt-symbol">&gt;</span> <span data-i18n="skills.status.label">Estado:</span> <span class="ok" data-i18n="skills.status.value">abierto a prácticas profesionales</span>
-            </p>
 
             <!-- Certificado Power BI -->
             <div id="cert-powerbi" class="cert-card">
@@ -236,7 +239,7 @@
                         <span class="contact-key">email</span>
                         <span class="contact-val">lunarazoangel@gmail.com</span>
                     </a>
-                    <a href="tel:+526861234567" class="contact-item">
+                    <a href="tel:+526861244240" class="contact-item">
                         <span class="contact-key">phone</span>
                         <span class="contact-val">+52 686 124 4240 </span>
                     </a>
@@ -244,10 +247,10 @@
                         <span class="contact-key">github</span>
                         <span class="contact-val">@lunarazoangel-developer</span>
                     </a>
-                    <a href="#" class="contact-item contact-item--disabled" title="Pendiente">
+                    <div class="contact-item contact-item--disabled" aria-label="LinkedIn próximamente">
                         <span class="contact-key">linkedin</span>
                         <span class="contact-val">/in/angel-luna <span class="muted" data-i18n="contact.soon">(próximamente)</span></span>
-                    </a>
+                    </div>
                     <div class="contact-item">
                         <span class="contact-key" data-i18n="contact.location">ubicación</span>
                         <span class="contact-val">Mexicali, B.C. — México</span>
@@ -256,7 +259,7 @@
             </div>
 
             <p class="footer">
-                <span class="prompt-symbol">&gt;</span> © 2026 Angel Abdiel Luna Razo · <span class="ok" data-i18n="footer.built">built with HTML, CSS &amp; JS</span> · <span class="muted">~/portfolio</span>
+                <span class="prompt-symbol">&gt;</span> © <span id="currentYear">2026</span> Angel Abdiel Luna Razo · <span class="ok" data-i18n="footer.built">built with HTML, CSS &amp; JS</span> · <span class="muted">~/portfolio</span>
             </p>
         </section>
 
