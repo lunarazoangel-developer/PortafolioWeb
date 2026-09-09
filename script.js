@@ -394,7 +394,35 @@
     if (year) year.textContent = String(new Date().getFullYear());
 
     /* =========================================================
-       8) Easter egg en consola
+       8) Analítica anónima de clics
+       ========================================================= */
+    const analyticsEndpoint = '/api/click';
+
+    document.querySelectorAll('[data-click-event]').forEach((element) => {
+        element.addEventListener('click', () => {
+            const payload = JSON.stringify({
+                event: element.dataset.clickEvent,
+                page: window.location.pathname,
+            });
+
+            if ('sendBeacon' in navigator) {
+                const body = new Blob([payload], { type: 'application/json' });
+                if (navigator.sendBeacon(analyticsEndpoint, body)) return;
+            }
+
+            fetch(analyticsEndpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: payload,
+                keepalive: true,
+            }).catch(() => {
+                // La analítica nunca debe interrumpir la navegación.
+            });
+        });
+    });
+
+    /* =========================================================
+       9) Easter egg en consola
        ========================================================= */
     console.log(
         '%c> portfolio@angel:~$',
@@ -404,7 +432,7 @@
     );
 
     /* =========================================================
-       9) Init
+       10) Init
        ========================================================= */
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', runHeroAnimation);
